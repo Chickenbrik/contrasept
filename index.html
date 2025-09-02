@@ -16,6 +16,39 @@
       color: white;
     }
 
+    .lang-switcher {
+      position: fixed;
+      top: 2%;      
+      right: 2%;    
+      display: flex;
+      flex-direction: column; 
+      gap: 10px; 
+      z-index: 1000;
+    }
+
+    .lang-btn {
+      padding: 10px 15px;
+      font-size: 1vw;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+    }
+
+    .lang-btn:hover {
+      background: #0056b3;
+    }
+
+    .content {
+      text-align: center;
+      font-size: 2vw;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -104,52 +137,85 @@
   </style>
 </head>
  <body>
-    <h1>Контрацепция</h1>
+  <section>
+  <div class="lang-switcher">
+    <button class="lang-btn" onclick="setLanguage('ru')">Русский</button>
+    <button class="lang-btn" onclick="setLanguage('en')">English</button>
+  </div>
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('[data-ru]').forEach(el => {
+        const html = el.getAttribute(`data-${lang}`);
+        if (html != null) {
+          el.innerHTML = html;
+      }
+    });
+  }
+  </script>
+    <h1 data-ru="Контрацепция" data-en="Contraception">Контрацепция</h1>
         <section>
           <div class="back-button">
-            <a href="https://chickenbrik.github.io/menu/">Назад</a>
+            <a data-ru="Назад" data-en="Back" href="https://chickenbrik.github.io/menu/">Назад</a>
           </div>
         </section>
         <section>
-          <h3>Как происходит оплодотворение</h3>
+          <h3 data-ru="Как происходит оплодотворение" data-en="How does fertilization occur">Как происходит оплодотворение</h3>
           <img src="https://lh4.googleusercontent.com/proxy/WNjOS0RC2Jv8Km_6448ByZCv5eaaxYuTKAURfWN8JZNdSQWMb93ulWr-lJ5jsPfPRHy-6DMvk202UpR2dBagXkuNyTSXD4eWe7oDvWK-1spqWZbS">
-          <p>После секса сперматозоиды попадают внутрь и могут жить там до 5 дней. Если в это время произошла овуляция — они могут добраться до яйцеклетки и соединиться с ней. Это и есть начало беременности.Сам момент соединения происходит быстро — в течение суток после овуляции.</p>
-          <p> Подробнее можно узнать <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%87%D0%B0%D1%82%D0%B8%D0%B5_%D1%83_%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0"> здесь</a></p>
+          <p data-ru="После секса сперматозоиды попадают внутрь и могут жить там до 5 дней. Если в это время произошла овуляция — они могут добраться до яйцеклетки и соединиться с ней. Это и есть начало беременности.Сам момент соединения происходит быстро — в течение суток после овуляции." 
+          data-en="After sex, spermatozoa enter the uterus and can live there for up to 5 days. If ovulation occurs at this time, they can reach the egg and connect with it. This is the beginning of pregnancy. The moment of connection itself occurs quickly - within 24 hours after ovulation.">
+            После секса сперматозоиды попадают внутрь и могут жить там до 5 дней. Если в это время произошла овуляция — они могут добраться до яйцеклетки и соединиться с ней. Это и есть начало беременности.Сам момент соединения происходит быстро — в течение суток после овуляции.</p>
+          <p> <span data-ru="Подробнее можно узнать" data-en="You can find out more"></span> <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%87%D0%B0%D1%82%D0%B8%D0%B5_%D1%83_%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0" data-ru="здесь" data-en="here"> здесь</a></p>
         </section>
         <section>\
-          <h3>Презервативы</h3>
+          <h3 data-ru="Презервативы" data-en="Condoms">Презервативы</h3>
           <img src="https://cdn.lifehacker.ru/wp-content/uploads/2018/04/uf_1524050767.jpg">
-          <p>Самая простая и нужная вещь.</p>
+          <p data-ru="Самая простая и нужная вещь." data-en="The simplest and most necessary thing.">Самая простая и нужная вещь.</p>
           <ul>
-            <li>Мужской презерватив надевается на пенис</li>
-            <li>Женский — вставляется внутрь</li>
+            <li data-ru="Мужской презерватив надевается на пенис" data-en="A male condom is placed on the penis.">Мужской презерватив надевается на пенис</li>
+            <li data-ru="Женский — вставляется внутрь" data-en="Female - inserted inside">Женский — вставляется внутрь</li>
           </ul>
-          <p>Они предохраняют и от болезней, и от беременности и родаются в аптеках, магазинах, стоят недорого. Есть с ароматами, тонкие, с пупырышками и т.д. — это уже для "удобства", не суть</p>
-          <p> Подробнее можно узнать <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D0%B8%D0%B2"> здесь</a></p>
+          <p data-ru="Они предохраняют и от болезней, и от беременности и родаются в аптеках, магазинах, стоят недорого. Есть с ароматами, тонкие, с пупырышками и т.д. — это уже для &quot;удобства&quot;, не суть"
+           data-en="They protect against diseases and pregnancy and are sold in pharmacies, stores, and are inexpensive. There are scented ones, thin ones, ones with pimples, etc. - this is for &quot;convenience&quot;, not the point.">
+           Они предохраняют и от болезней, и от беременности и родаются в аптеках, магазинах, стоят недорого. Есть с ароматами, тонкие, с пупырышками и т.д. — это уже для "удобства", не суть</p>
+          <p> <span data-ru="Подробнее можно узнать" data-en="You can find out more"></span> <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D0%B8%D0%B2" data-ru="здесь" data-en="here"> здесь</a></p>
         </section>
         <section>
-          <h3>Таблетки от беременности (гормональные)</h3>
+          <h3 data-ru="Таблетки от беременности (гормональные)" data-en="Pregnancy pills (hormonal)">Таблетки от беременности (гормональные)</h3>
           <img src="https://feminamed.ru/netcat_files/35/125/oralnie_sredstva_kontracepcii_770.jpg">
-          <p>Пьют их каждый день. Таблетки делают так, что овуляции не происходит, так же оень надёжные, но нужно пить по графику.<strong>Не защищают от инфекций!</strong>Назначаются врачом</p>
-          <p> Подробнее можно узнать <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%82%D0%B8%D0%B2%D1%8B"> здесь</a> и <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BC%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F"> здесь</a> </p>
+          <p>
+          <span 
+          data-ru="Пьют их каждый день. Таблетки делают так, что овуляции не происходит, так же оень надёжные, но нужно пить по графику.<strong>Не защищают от инфекций!</strong>Назначаются врачом" 
+          data-en="They are taken every day. The pills make it so that ovulation does not occur, they are also very reliable, but you need to take them on schedule. <strong>They do not protect against infections!</strong>They are prescribed by a doctor">
+            Пьют их каждый день. Таблетки делают так, что овуляции не происходит, так же оень надёжные, но нужно пить по графику.<strong>Не защищают от инфекций!</strong>Назначаются врачом></span></p>
+          <p> <span data-ru="Подробнее можно узнать" data-en="You can find out more"></span> <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%82%D0%B8%D0%B2%D1%8B" data-ru="здесь" data-en="here"> здесь</a> и <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BC%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F" data-ru="здесь" data-en="here"> здесь</a></p>
         </section>
         <section>
-          <h3>Экстренная контрацепция</h3>
+          <h3 data-ru="Экстренная контрацепция" data-en="Emergency contraception">Экстренная контрацепция</h3>
           <img src="https://sc.api.megapteka.ru/ma/specials/e7/2c/f2d4ed40124b14fb8e29dfcbfc9483a4c3d537411f408c76cbe11918b12d9301.jpg">
-          <p>Если секс уже был и был незащищённый — есть таблетки типа "Постинор". Их надо выпить в течение 3 дней, но лучше — как можно быстрее.Важно:<strong>Это не обычная защита, а "аварийка".Часто применять нельзя — может сбить цикл</strong></p>
-          <p> Подробнее можно узнать <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D1%81%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F"> здесь</a>
+          <p>
+          <span
+          data-ru="Если секс уже был и был незащищённый — есть таблетки типа &quot;Постинор&quot;. Их надо выпить в течение 3 дней, но лучше — как можно быстрее.Важно:<strong>Это не обычная защита, а &quot;аварийка&quot;.Часто применять нельзя — может сбить цикл</strong>"
+          data-en="If you have already had sex and it was unprotected, there are pills like &quot;Postinor&quot;. They should be taken within 3 days, but it is better to take them as soon as possible. Important:<strong>This is not a regular protection, but an &quot;emergency&quot;. You can't use it often - it can disrupt your cycle</strong>">
+           Если секс уже был и был незащищённый — есть таблетки типа "Постинор". Их надо выпить в течение 3 дней, но лучше — как можно быстрее.Важно:<strong>Это не обычная защита, а "аварийка".Часто применять нельзя — может сбить цикл</strong>> </span></p>
+          <p> <span data-ru="Подробнее можно узнать" data-en="You can find out more"></span> <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D1%81%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F" data-ru="здесь" data-en="here"> здесь</a></p>
         </section>
         <section>
-          <h3>Виды контрацепции (защиты от беременности)</h3>
+          <h3 data-ru="Виды контрацепции (защиты от беременности)" data-en="Types of contraception (protection against pregnancy)">Виды контрацепции (защиты от беременности)</h3>
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL8mdpDC25YroXQ9nuYksraplAG3z5yz_tHA&s">
-          <p>Презерватив на пенис - Защищает от всего, может порваться</p>
-          <p>Таблетки - Каждый день очень надёжно защищает от беремености, надо не забывать</p>
-          <p>Спираль - Ставится в матку, работает 3–5 лет ставит врач</p>
-          <p>Имплант - Ставиться под кожу долгосрочно, не всем подходит</p>
-          <p>Календарный метод - Считать дни после оплодотворения, без таблеток, люди часто ошибаются при этом методе</p>
-          <p>Прерванный половой акт - Прервать до семяизвержения, легко сделать, почти всегда ненадёжно</p>
-          <p>Экстренные таблетки - после секса, cрочно и быстро, много побочек</p>
-          <p> Подробнее можно узнать <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F"> здесь</a>
+          <p data-ru="Презерватив на пенис - Защищает от всего, может порваться" data-en="Condom on penis - Protects from everything, can break">Презерватив на пенис - Защищает от всего, может порваться</p>
+          <p data-ru="Таблетки - Каждый день очень надёжно защищает от беремености, надо не забывать" data-en="Tablets - Every day is very reliable protection against pregnancy, you must not forget">Таблетки - Каждый день очень надёжно защищает от беремености, надо не забывать</p>
+          <p data-ru="Спираль - Ставится в матку, работает 3–5 лет ставит врач" data-en="IUD - Placed in the uterus, works for 3-5 years, placed by a doctor">Спираль - Ставится в матку, работает 3–5 лет ставит врач</p>
+          <p data-ru="Имплант - Ставиться под кожу долгосрочно, не всем подходит" data-en="Implant - Placed under the skin for a long time, not suitable for everyone">Имплант - Ставиться под кожу долгосрочно, не всем подходит</p>
+          <p data-ru="Календарный метод - Считать дни после оплодотворения, без таблеток, люди часто ошибаются при этом методе" 
+          data-en="Calendar Method - Counting Days After Fertilization, Without Pills, People Often Make Mistakes With This Method">
+          Календарный метод - Считать дни после оплодотворения, без таблеток, люди часто ошибаются при этом методе</p>
+          <p data-ru="Прерванный половой акт - Прервать до семяизвержения, легко сделать, почти всегда ненадёжно" 
+          data-en="Coitus interruptus - To interrupt before ejaculation, easy to do, almost always unreliable">
+            Прерванный половой акт - Прервать до семяизвержения, легко сделать, почти всегда ненадёжно</p>
+          <p data-ru="Экстренные таблетки - после секса, cрочно и быстро, много побочек" 
+          data-en="Emergency pills - after sex, urgently and quickly, many side effects">
+          Экстренные таблетки - после секса, cрочно и быстро, много побочек</p>
+          <p> <span data-ru="Подробнее можно узнать" data-en="You can find out more"></span> <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F" data-ru="здесь" data-en="here"> здесь</a></p>
         </section>
  </body>
 </html>
